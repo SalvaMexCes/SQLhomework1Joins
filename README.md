@@ -141,3 +141,18 @@ mysql> SELECT * FROM Employee;
 |          7 | Ben    |         2 |
 +------------+--------+-----------+
 6 rows in set (0.00 sec)
+
+mysql> SELECT e1.Name EmployeeName, e2.name AS ManagerName
+    -> FROM Employee e1
+    -> INNER JOIN Employee e2
+    -> ON e1.ManagerID = e2.EmployeeID;
++--------------+-------------+
+| EmployeeName | ManagerName |
++--------------+-------------+
+| Mike         | Roger       |
+| David        | Roger       |
+| Marry        | David       |
+| Joseph       | David       |
+| Ben          | David       |
++--------------+-------------+
+5 rows in set (0.00 sec)
