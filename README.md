@@ -172,3 +172,16 @@ mysql> SELECT e1.Name EmployeeName, IFNULL(e2.name, 'Top Manager') AS ManagerNam
 | Ben          | David       |
 +--------------+-------------+
 6 rows in set (0.00 sec)
+
+mysql> SELECT t1.ID AS T1ID, t1.Value1 AS T1Value,
+    -> t2.ID T2ID, t2.Value2 AS T2Value
+    -> FROM Table1 t1
+    -> NATURAL JOIN Table2 t2;
++------+---------+------+---------+
+| T1ID | T1Value | T2ID | T2Value |
++------+---------+------+---------+
+|    1 | First   |    1 | First   |
+|    2 | Second  |    2 | Second  |
+|    3 | Third   |    3 | Third   |
++------+---------+------+---------+
+3 rows in set (0.00 sec)
