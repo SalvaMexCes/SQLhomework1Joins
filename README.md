@@ -67,3 +67,4 @@ mysql> SELECT t1.*, t2.*
 |    3 | Third  |    3 | Third  |
 +------+--------+------+--------+
 3 rows in set (0.00 sec)
+
