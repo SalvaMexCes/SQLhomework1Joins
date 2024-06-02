@@ -156,3 +156,19 @@ mysql> SELECT e1.Name EmployeeName, e2.name AS ManagerName
 | Ben          | David       |
 +--------------+-------------+
 5 rows in set (0.00 sec)
+
+mysql> SELECT e1.Name EmployeeName, IFNULL(e2.name, 'Top Manager') AS ManagerName
+    -> FROM Employee e1
+    -> LEFT JOIN Employee e2
+    -> ON e1.ManagerID = e2.EmployeeID;
++--------------+-------------+
+| EmployeeName | ManagerName |
++--------------+-------------+
+| Mike         | Roger       |
+| David        | Roger       |
+| Roger        | Top Manager |
+| Marry        | David       |
+| Joseph       | David       |
+| Ben          | David       |
++--------------+-------------+
+6 rows in set (0.00 sec)
