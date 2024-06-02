@@ -68,3 +68,41 @@ mysql> SELECT t1.*, t2.*
 +------+--------+------+--------+
 3 rows in set (0.00 sec)
 
+mysql> SELECT t1.ID AS T1ID, t1.Value AS T1Value,
+    -> t2.ID AS T2ID, t2.Value AS T2Value
+    -> FROM Table1 t1
+    -> CROSS JOIN Table2 t2;
++------+---------+------+---------+
+| T1ID | T1Value | T2ID | T2Value |
++------+---------+------+---------+
+|    5 | Fifth   |    1 | First   |
+|    4 | Fourth  |    1 | First   |
+|    3 | Third   |    1 | First   |
+|    2 | Second  |    1 | First   |
+|    1 | First   |    1 | First   |
+|    5 | Fifth   |    2 | Second  |
+|    4 | Fourth  |    2 | Second  |
+|    3 | Third   |    2 | Second  |
+|    2 | Second  |    2 | Second  |
+|    1 | First   |    2 | Second  |
+|    5 | Fifth   |    3 | Third   |
+|    4 | Fourth  |    3 | Third   |
+|    3 | Third   |    3 | Third   |
+|    2 | Second  |    3 | Third   |
+|    1 | First   |    3 | Third   |
+|    5 | Fifth   |    6 | Sixth   |
+|    4 | Fourth  |    6 | Sixth   |
+|    3 | Third   |    6 | Sixth   |
+|    2 | Second  |    6 | Sixth   |
+|    1 | First   |    6 | Sixth   |
+|    5 | Fifth   |    7 | Seventh |
+|    4 | Fourth  |    7 | Seventh |
+|    3 | Third   |    7 | Seventh |
+|    2 | Second  |    7 | Seventh |
+|    1 | First   |    7 | Seventh |
+|    5 | Fifth   |    8 | Eighth  |
+|    4 | Fourth  |    8 | Eighth  |
+|    3 | Third   |    8 | Eighth  |
+|    2 | Second  |    8 | Eighth  |
+|    1 | First   |    8 | Eighth  |
++------+---------+------+---------+
