@@ -106,3 +106,38 @@ mysql> SELECT t1.ID AS T1ID, t1.Value AS T1Value,
 |    2 | Second  |    8 | Eighth  |
 |    1 | First   |    8 | Eighth  |
 +------+---------+------+---------+
+
+mysql> CREATE TABLE Employee(
+    -> EmployeeID INT PRIMARY KEY,
+    -> Name NVARCHAR(50),
+    -> ManagerID INT
+    -> );
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> INSERT INTO Employee
+    -> SELECT 1, 'Mike', 3
+    -> UNION ALL
+    -> SELECT 2, 'David', 3
+    -> UNION ALL
+    -> SELECT 3, 'Roger', NULL
+    -> UNION ALL
+    -> SELECT 4, 'Marry', 2
+    -> UNION ALL
+    -> SELECT 5, 'Joseph', 2
+    -> UNION ALL
+    -> SELECT 7, 'Ben', 2;
+Query OK, 6 rows affected (0.01 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM Employee;
++------------+--------+-----------+
+| EmployeeID | Name   | ManagerID |
++------------+--------+-----------+
+|          1 | Mike   |         3 |
+|          2 | David  |         3 |
+|          3 | Roger  |      NULL |
+|          4 | Marry  |         2 |
+|          5 | Joseph |         2 |
+|          7 | Ben    |         2 |
++------------+--------+-----------+
+6 rows in set (0.00 sec)
