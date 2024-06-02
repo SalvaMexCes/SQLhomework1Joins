@@ -55,3 +55,15 @@ mysql> select * from table2;
 |    8 | Eighth  |
 +------+---------+
 6 rows in set (0.00 sec)
+
+mysql> SELECT t1.*, t2.*
+    -> FROM Table1 t1
+    -> INNER JOIN Table2 t2 ON t1.ID = t2.ID;
++------+--------+------+--------+
+| ID   | Value  | ID   | Value  |
++------+--------+------+--------+
+|    1 | First  |    1 | First  |
+|    2 | Second |    2 | Second |
+|    3 | Third  |    3 | Third  |
++------+--------+------+--------+
+3 rows in set (0.00 sec)
