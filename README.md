@@ -307,11 +307,6 @@ mysql> SELECT fm.title, cat.name, dt.CountofCategory
 | ANACONDA CONFESSIONS        | Animation   |              66 |
 | ARGONAUTS TOWN              | Animation   |              66 |
 | BIKINI BORROWERS            | Animation   |              66 |
-| BLACKOUT PRIVATE            | Animation   |              66 |
-| BORROWERS BEDAZZLED         | Animation   |              66 |
-| CLASH FREDDY                | Animation   |              66 |
-| CLUB GRAFFITI               | Animation   |              66 |
-| CROSSROADS CASUALTIES       | Animation   |              66 |
 
                             . . .
                     
@@ -319,8 +314,6 @@ mysql> SELECT fm.title, cat.name, dt.CountofCategory
 | MAKER GABLES                | Children    |              60 |
 | MICROCOSMOS PARADISE        | Children    |              60 |
 | MODEL FISH                  | Children    |              60 |
-| MURDER ANTITRUST            | Children    |              60 |
-| NOON PAPI                   | Children    |              60 |
 
                             . . .
                     
@@ -328,7 +321,6 @@ mysql> SELECT fm.title, cat.name, dt.CountofCategory
 | ARIZONA BANG                | Classics    |              57 |
 | BEAST HUNCHBACK             | Classics    |              57 |
 | BOUND CHEAPER               | Classics    |              57 |
-| CANDIDATE PERDITION         | Classics    |              57 |
 
                             . . .
                     
@@ -336,7 +328,6 @@ mysql> SELECT fm.title, cat.name, dt.CountofCategory
 | ANTHEM LUKE                 | Comedy      |              58 |
 | BRINGING HYSTERICAL         | Comedy      |              58 |
 | CAPER MOTIONS               | Comedy      |              58 |
-| CAT CONEHEADS               | Comedy      |              58 |
 
                             . . .
                     
@@ -344,9 +335,6 @@ mysql> SELECT fm.title, cat.name, dt.CountofCategory
 | ADAPTATION HOLES            | Documentary |              68 |
 | ARMY FLINTSTONES            | Documentary |              68 |
 | BEACH HEARTBREAKERS         | Documentary |              68 |
-| PELICAN COMFORTS            | Documentary |              68 |
-| POCUS PULP                  | Documentary |              68 |
-| PRINCESS GIANT              | Documentary |              68 |
 
                             . . .
                     
@@ -354,11 +342,6 @@ mysql> SELECT fm.title, cat.name, dt.CountofCategory
 | BEAUTY GREASE               | Drama       |              62 |
 | BEETHOVEN EXORCIST          | Drama       |              62 |
 | BLADE POLISH                | Drama       |              62 |
-| BRIGHT ENCOUNTERS           | Drama       |              62 |
-| ENCOUNTERS CURTAIN          | Drama       |              62 |
-| GOLDFINGER SENSIBILITY      | Drama       |              62 |
-| GONE TROUBLE                | Drama       |              62 |
-| GREEDY ROOTS                | Drama       |              62 |
 
                             . . .
                     
@@ -366,10 +349,6 @@ mysql> SELECT fm.title, cat.name, dt.CountofCategory
 | APACHE DIVINE               | Family      |              69 |
 | ATLANTIS CAUSE              | Family      |              69 |
 | BAKED CLEOPATRA             | Family      |              69 |
-| BANG KWAI                   | Family      |              69 |
-| BEDAZZLED MARRIED           | Family      |              69 |
-| BILKO ANONYMOUS             | Family      |              69 |
-| BLANKET BEVERLY             | Family      |              69 |
 
                             . . .
                     
@@ -377,10 +356,6 @@ mysql> SELECT fm.title, cat.name, dt.CountofCategory
 | ALAMO VIDEOTAPE             | Foreign     |              73 |
 | ALIEN CENTER                | Foreign     |              73 |
 | ALLEY EVOLUTION             | Foreign     |              73 |
-| BABY HALL                   | Foreign     |              73 |
-| BALLROOM MOCKINGBIRD        | Foreign     |              73 |
-| BROOKLYN DESERT             | Foreign     |              73 |
-| BUGSY SONG                  | Foreign     |              73 |
 
                             . . .
                     
@@ -388,9 +363,6 @@ mysql> SELECT fm.title, cat.name, dt.CountofCategory
 | BULWORTH COMMANDMENTS       | Games       |              61 |
 | CANDLES GRAPES              | Games       |              61 |
 | CHICAGO NORTH               | Games       |              61 |
-| CREATURES SHAKESPEARE       | Games       |              61 |
-| SPY MILE                    | Games       |              61 |
-| STAMPEDE DISTURBING         | Games       |              61 |
 
                             . . .
                     
@@ -398,37 +370,16 @@ mysql> SELECT fm.title, cat.name, dt.CountofCategory
 | MONTEREY LABYRINTH          | Horror      |              56 |
 | MOTIONS DETAILS             | Horror      |              56 |
 | PANIC CLUB                  | Horror      |              56 |
-| REEF SALUTE                 | Horror      |              56 |
-| ROCK INSTINCT               | Horror      |              56 |
-| ROLLERCOASTER BRINGING      | Horror      |              56 |
-| RULES HUMAN                 | Horror      |              56 |
-| SIM
+
                             . . .
                     
 | MASKED BUBBLE               | Music       |              51 |
 | MINORITY KISS               | Music       |              51 |
 | MONSTER SPARTACUS           | Music       |              51 |
 | OLEANDER CLUE               | Music       |              51 |
-| OUTFIELD MASSACRE           | Music       |              51 |
-| PERSONAL LADYBUGS           | Music       |              51 |
-| REBEL AIRPORT               | Music       |              51 |
-| REDS POCUS                  | Music       |              51 |
-| ROMAN PUNK                  | Music       |              51 |
-| RUNNER MADIGAN              | Music       |              51 |
-| SCALAWAG DUCK               | Music       |              51 |
-| SILENCE KANE                | Music       |              51 |
-| SONG HEDWIG                 | Music       |              51 |
 
                             . . .
                     
-| JEKYLL FROGMEN              | New         |              63 |
-| JUMANJI BLADE               | New         |              63 |
-| JUNGLE CLOSER               | New         |              63 |
-| LOVERBOY ATTACKS            | New         |              63 |
-| MAIDEN HOME                 | New         |              63 |
-| MANNEQUIN WORST             | New         |              63 |
-| MASK PEACH                  | New         |              63 |
-| MINE TITANS                 | New         |              63 |
 | MONEY HAROLD                | New         |              63 |
 | NUTS TIES                   | New         |              63 |
 | OKLAHOMA JUMANJI            | New         |              63 |
@@ -436,10 +387,6 @@ mysql> SELECT fm.title, cat.name, dt.CountofCategory
 
                                 . . .
                     
-| CITIZEN SHREK               | Sci-Fi      |              61 |
-| COLDBLOODED DARLING         | Sci-Fi      |              61 |
-| CONNECTICUT TRAMP           | Sci-Fi      |              61 |
-| CROWDS TELEMARK             | Sci-Fi      |              61 |
 | DAISY MENAGERIE             | Sci-Fi      |              61 |
 | DISTURBING SCARFACE         | Sci-Fi      |              61 |
 | DIVIDE MONSTER              | Sci-Fi      |              61 |
@@ -447,8 +394,6 @@ mysql> SELECT fm.title, cat.name, dt.CountofCategory
 
                             . . .
                     
-| LOSER HUSTLER               | Sports      |              74 |
-| MERMAID INSECTS             | Sports      |              74 |
 | MILE MULAN                  | Sports      |              74 |
 | MOSQUITO ARMAGEDDON         | Sports      |              74 |
 | MOTHER OLEANDER             | Sports      |              74 |
@@ -456,10 +401,6 @@ mysql> SELECT fm.title, cat.name, dt.CountofCategory
 
                             . . .
                     
-| TOMATOES HELLFIGHTERS       | Travel      |              57 |
-| TRAFFIC HOBBIT              | Travel      |              57 |
-| TROUBLE DATE                | Travel      |              57 |
-| VALENTINE VANISHING         | Travel      |              57 |
 | WINDOW SIDE                 | Travel      |              57 |
 | WOLVES DESIRE               | Travel      |              57 |
 | WORKER TARZAN               | Travel      |              57 |
