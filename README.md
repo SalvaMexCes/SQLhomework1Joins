@@ -203,3 +203,78 @@ mysql> SELECT t1.ID T1ID, t1.Value1 AS T1Value
 |    7 | Seventh |
 |    8 | Eighth  |
 +------+---------+
+
+mysql> use sakila;
+Database changed
+mysql> show tables;
++----------------------------+
+| Tables_in_sakila           |
++----------------------------+
+| actor                      |
+| actor_info                 |
+| address                    |
+| category                   |
+| city                       |
+| country                    |
+| customer                   |
+| customer_list              |
+| film                       |
+| film_actor                 |
+| film_category              |
+| film_list                  |
+| film_text                  |
+| inventory                  |
+| language                   |
+| nicer_but_slower_film_list |
+| payment                    |
+| rental                     |
+| sales_by_film_category     |
+| sales_by_store             |
+| staff                      |
+| staff_list                 |
+| store                      |
++----------------------------+
+23 rows in set (0.01 sec)
+
+mysql> SELECT DISTINCT cust.customer_id, cust.first_name, cust.last_name
+    -> FROM customer cust
+    -> INNER JOIN rental ren ON ren.customer_id = cust.customer_id
+    -> INNER JOIN inventory inv ON inv.inventory_id = ren.inventory_id
+    -> INNER JOIN film fl ON fl.film_id = inv.film_id
+    -> INNER JOIN film_category fc ON fc.film_id = fl.film_id
+    -> INNER JOIN category cat ON cat.category_id = fc.category_id
+    -> WHERE cat.name = 'Action'
+    -> ORDER BY cust.customer_id, cust.first_name, cust.last_name;
++-------------+-------------+--------------+
+| customer_id | first_name  | last_name    |
++-------------+-------------+--------------+
+|           1 | MARY        | SMITH        |
+|           2 | PATRICIA    | JOHNSON      |
+|           3 | LINDA       | WILLIAMS     |
+|           4 | BARBARA     | JONES        |
+|           5 | ELIZABETH   | BROWN        |
+|           6 | JENNIFER    | DAVIS        |
+|           7 | MARIA       | MILLER       |
+|           8 | SUSAN       | WILSON       |
+|          10 | DOROTHY     | TAYLOR       |
+|          11 | LISA        | ANDERSON     |
+
+                    . . .
+                    
+|         583 | MARSHALL    | THORN        |
+|         584 | SALVADOR    | TEEL         |
+|         585 | PERRY       | SWAFFORD     |
+|         587 | SERGIO      | STANFIELD    |
+|         588 | MARION      | OCAMPO       |
+|         589 | TRACY       | HERRMANN     |
+|         590 | SETH        | HANNON       |
+|         592 | TERRANCE    | ROUSH        |
+|         593 | RENE        | MCALISTER    |
+|         594 | EDUARDO     | HIATT        |
+|         595 | TERRENCE    | GUNDERSON    |
+|         596 | ENRIQUE     | FORSYTHE     |
+|         598 | WADE        | DELVALLE     |
+|         599 | AUSTIN      | CINTRON      |
++-------------+-------------+--------------+
+510 rows in set (0.07 sec)
+
