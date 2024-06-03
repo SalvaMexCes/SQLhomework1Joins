@@ -185,3 +185,21 @@ mysql> SELECT t1.ID AS T1ID, t1.Value1 AS T1Value,
 |    3 | Third   |    3 | Third   |
 +------+---------+------+---------+
 3 rows in set (0.00 sec)
+
+mysql> SELECT t1.ID T1ID, t1.Value1 AS T1Value
+    -> FROM Table1 t1
+    -> UNION
+    -> SELECT t2.ID AS T2ID, t2.Value2 AS T2Value
+    -> FROM Table2 t2;
++------+---------+
+| T1ID | T1Value |
++------+---------+
+|    1 | First   |
+|    2 | Second  |
+|    3 | Third   |
+|    4 | Fourth  |
+|    5 | Fifth   |
+|    6 | Sixth   |
+|    7 | Seventh |
+|    8 | Eighth  |
++------+---------+
