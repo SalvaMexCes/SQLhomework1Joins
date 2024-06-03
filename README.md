@@ -278,3 +278,191 @@ mysql> SELECT DISTINCT cust.customer_id, cust.first_name, cust.last_name
 +-------------+-------------+--------------+
 510 rows in set (0.07 sec)
 
+mysql> SELECT fm.title, cat.name, dt.CountofCategory
+    -> FROM film fm
+    -> INNER JOIN film_category fc ON fc.film_id = fm.film_id
+    -> INNER JOIN category cat ON cat.category_id = fc.category_id
+    -> INNER JOIN
+    -> (SELECT COUNT(*) AS CountofCategory, fc.category_id
+    -> FROM film_category fc
+    -> GROUP BY fc.category_id) dt ON dt.category_id  = fc.category_id;
++-----------------------------+-------------+-----------------+
+| title                       | name        | CountofCategory |
++-----------------------------+-------------+-----------------+
+| AMADEUS HOLY                | Action      |              64 |
+| AMERICAN CIRCUS             | Action      |              64 |
+| ANTITRUST TOMATOES          | Action      |              64 |
+| ARK RIDGEMONT               | Action      |              64 |
+| BAREFOOT MANCHURIAN         | Action      |              64 |
+| BERETS AGENT                | Action      |              64 |
+| BRIDE INTRIGUE              | Action      |              64 |
+| BULL SHAWSHANK              | Action      |              64 |
+| CELEBRITY HORN              | Action      |              64 |
+| CLUELESS BUCKET             | Action      |              64 |
+| CROW GREASE                 | Action      |              64 |
+
+                        . . .
+                    
+| ALTER VICTORY               | Animation   |              66 |
+| ANACONDA CONFESSIONS        | Animation   |              66 |
+| ARGONAUTS TOWN              | Animation   |              66 |
+| BIKINI BORROWERS            | Animation   |              66 |
+| BLACKOUT PRIVATE            | Animation   |              66 |
+| BORROWERS BEDAZZLED         | Animation   |              66 |
+| CLASH FREDDY                | Animation   |              66 |
+| CLUB GRAFFITI               | Animation   |              66 |
+| CROSSROADS CASUALTIES       | Animation   |              66 |
+
+                            . . .
+                    
+| MAGIC MALLRATS              | Children    |              60 |
+| MAKER GABLES                | Children    |              60 |
+| MICROCOSMOS PARADISE        | Children    |              60 |
+| MODEL FISH                  | Children    |              60 |
+| MURDER ANTITRUST            | Children    |              60 |
+| NOON PAPI                   | Children    |              60 |
+
+                            . . .
+                    
+| ALICE FANTASIA              | Classics    |              57 |
+| ARIZONA BANG                | Classics    |              57 |
+| BEAST HUNCHBACK             | Classics    |              57 |
+| BOUND CHEAPER               | Classics    |              57 |
+| CANDIDATE PERDITION         | Classics    |              57 |
+
+                            . . .
+                    
+| AIRPLANE SIERRA             | Comedy      |              58 |
+| ANTHEM LUKE                 | Comedy      |              58 |
+| BRINGING HYSTERICAL         | Comedy      |              58 |
+| CAPER MOTIONS               | Comedy      |              58 |
+| CAT CONEHEADS               | Comedy      |              58 |
+
+                            . . .
+                    
+| ACADEMY DINOSAUR            | Documentary |              68 |
+| ADAPTATION HOLES            | Documentary |              68 |
+| ARMY FLINTSTONES            | Documentary |              68 |
+| BEACH HEARTBREAKERS         | Documentary |              68 |
+| PELICAN COMFORTS            | Documentary |              68 |
+| POCUS PULP                  | Documentary |              68 |
+| PRINCESS GIANT              | Documentary |              68 |
+
+                            . . .
+                    
+| APOLLO TEEN                 | Drama       |              62 |
+| BEAUTY GREASE               | Drama       |              62 |
+| BEETHOVEN EXORCIST          | Drama       |              62 |
+| BLADE POLISH                | Drama       |              62 |
+| BRIGHT ENCOUNTERS           | Drama       |              62 |
+| ENCOUNTERS CURTAIN          | Drama       |              62 |
+| GOLDFINGER SENSIBILITY      | Drama       |              62 |
+| GONE TROUBLE                | Drama       |              62 |
+| GREEDY ROOTS                | Drama       |              62 |
+
+                            . . .
+                    
+| AFRICAN EGG                 | Family      |              69 |
+| APACHE DIVINE               | Family      |              69 |
+| ATLANTIS CAUSE              | Family      |              69 |
+| BAKED CLEOPATRA             | Family      |              69 |
+| BANG KWAI                   | Family      |              69 |
+| BEDAZZLED MARRIED           | Family      |              69 |
+| BILKO ANONYMOUS             | Family      |              69 |
+| BLANKET BEVERLY             | Family      |              69 |
+
+                            . . .
+                    
+| AGENT TRUMAN                | Foreign     |              73 |
+| ALAMO VIDEOTAPE             | Foreign     |              73 |
+| ALIEN CENTER                | Foreign     |              73 |
+| ALLEY EVOLUTION             | Foreign     |              73 |
+| BABY HALL                   | Foreign     |              73 |
+| BALLROOM MOCKINGBIRD        | Foreign     |              73 |
+| BROOKLYN DESERT             | Foreign     |              73 |
+| BUGSY SONG                  | Foreign     |              73 |
+
+                            . . .
+                    
+| AUTUMN CROW                 | Games       |              61 |
+| BULWORTH COMMANDMENTS       | Games       |              61 |
+| CANDLES GRAPES              | Games       |              61 |
+| CHICAGO NORTH               | Games       |              61 |
+| CREATURES SHAKESPEARE       | Games       |              61 |
+| SPY MILE                    | Games       |              61 |
+| STAMPEDE DISTURBING         | Games       |              61 |
+
+                            . . .
+                    
+| LOVE SUICIDES               | Horror      |              56 |
+| MONTEREY LABYRINTH          | Horror      |              56 |
+| MOTIONS DETAILS             | Horror      |              56 |
+| PANIC CLUB                  | Horror      |              56 |
+| REEF SALUTE                 | Horror      |              56 |
+| ROCK INSTINCT               | Horror      |              56 |
+| ROLLERCOASTER BRINGING      | Horror      |              56 |
+| RULES HUMAN                 | Horror      |              56 |
+| SIM
+                            . . .
+                    
+| MASKED BUBBLE               | Music       |              51 |
+| MINORITY KISS               | Music       |              51 |
+| MONSTER SPARTACUS           | Music       |              51 |
+| OLEANDER CLUE               | Music       |              51 |
+| OUTFIELD MASSACRE           | Music       |              51 |
+| PERSONAL LADYBUGS           | Music       |              51 |
+| REBEL AIRPORT               | Music       |              51 |
+| REDS POCUS                  | Music       |              51 |
+| ROMAN PUNK                  | Music       |              51 |
+| RUNNER MADIGAN              | Music       |              51 |
+| SCALAWAG DUCK               | Music       |              51 |
+| SILENCE KANE                | Music       |              51 |
+| SONG HEDWIG                 | Music       |              51 |
+
+                            . . .
+                    
+| JEKYLL FROGMEN              | New         |              63 |
+| JUMANJI BLADE               | New         |              63 |
+| JUNGLE CLOSER               | New         |              63 |
+| LOVERBOY ATTACKS            | New         |              63 |
+| MAIDEN HOME                 | New         |              63 |
+| MANNEQUIN WORST             | New         |              63 |
+| MASK PEACH                  | New         |              63 |
+| MINE TITANS                 | New         |              63 |
+| MONEY HAROLD                | New         |              63 |
+| NUTS TIES                   | New         |              63 |
+| OKLAHOMA JUMANJI            | New         |              63 |
+| PHANTOM GLORY               | New         |              63 |
+
+                                . . .
+                    
+| CITIZEN SHREK               | Sci-Fi      |              61 |
+| COLDBLOODED DARLING         | Sci-Fi      |              61 |
+| CONNECTICUT TRAMP           | Sci-Fi      |              61 |
+| CROWDS TELEMARK             | Sci-Fi      |              61 |
+| DAISY MENAGERIE             | Sci-Fi      |              61 |
+| DISTURBING SCARFACE         | Sci-Fi      |              61 |
+| DIVIDE MONSTER              | Sci-Fi      |              61 |
+| DOLLS RAGE                  | Sci-Fi      |              61 |
+
+                            . . .
+                    
+| LOSER HUSTLER               | Sports      |              74 |
+| MERMAID INSECTS             | Sports      |              74 |
+| MILE MULAN                  | Sports      |              74 |
+| MOSQUITO ARMAGEDDON         | Sports      |              74 |
+| MOTHER OLEANDER             | Sports      |              74 |
+| MUMMY CREATURES             | Sports      |              74 |
+
+                            . . .
+                    
+| TOMATOES HELLFIGHTERS       | Travel      |              57 |
+| TRAFFIC HOBBIT              | Travel      |              57 |
+| TROUBLE DATE                | Travel      |              57 |
+| VALENTINE VANISHING         | Travel      |              57 |
+| WINDOW SIDE                 | Travel      |              57 |
+| WOLVES DESIRE               | Travel      |              57 |
+| WORKER TARZAN               | Travel      |              57 |
+| WORKING MICROCOSMOS         | Travel      |              57 |
++-----------------------------+-------------+-----------------+
+1000 rows in set (0.01 sec)
