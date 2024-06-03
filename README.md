@@ -407,3 +407,46 @@ mysql> SELECT fm.title, cat.name, dt.CountofCategory
 | WORKING MICROCOSMOS         | Travel      |              57 |
 +-----------------------------+-------------+-----------------+
 1000 rows in set (0.01 sec)
+
+mysql> SELECT payment_id, cust.first_name, cust.last_name, amount
+    -> FROM payment pt
+    -> INNER JOIN customer cust ON cust.customer_id = pt.customer_id
+    -> WHERE amount >
+    -> ( SELECT AVG (amount)
+    -> FROM payment pt1
+    -> WHERE pt1.customer_id = pt.customer_id )
+    -> ORDER BY cust.customer_id;
++------------+-------------+--------------+--------+
+| payment_id | first_name  | last_name    | amount |
++------------+-------------+--------------+--------+
+|          3 | MARY        | SMITH        |   5.99 |
+|          5 | MARY        | SMITH        |   9.99 |
+|          6 | MARY        | SMITH        |   4.99 |
+|          7 | MARY        | SMITH        |   4.99 |
+|          9 | MARY        | SMITH        |   3.99 |
+|         10 | MARY        | SMITH        |   5.99 |
+|         11 | MARY        | SMITH        |   5.99 |
+|         12 | MARY        | SMITH        |   4.99 |
+|         13 | MARY        | SMITH        |   4.99 |
+|         14 | MARY        | SMITH        |   7.99 |
+|         16 | MARY        | SMITH        |   4.99 |
+|         17 | MARY        | SMITH        |   4.99 |
+|         22 | MARY        | SMITH        |   4.99 |
+
+                        . . .
+                                
+|      16019 | WADE        | DELVALLE     |   6.99 |
+|      16023 | WADE        | DELVALLE     |   5.99 |
+|      16024 | WADE        | DELVALLE     |   4.99 |
+|      16025 | WADE        | DELVALLE     |   4.99 |
+|      16030 | WADE        | DELVALLE     |   7.99 |
+|      16031 | AUSTIN      | CINTRON      |   4.99 |
+|      16033 | AUSTIN      | CINTRON      |   6.99 |
+|      16034 | AUSTIN      | CINTRON      |   4.99 |
+|      16035 | AUSTIN      | CINTRON      |   6.99 |
+|      16038 | AUSTIN      | CINTRON      |   9.99 |
+|      16040 | AUSTIN      | CINTRON      |   6.99 |
+|      16045 | AUSTIN      | CINTRON      |   4.99 |
+|      16047 | AUSTIN      | CINTRON      |   8.99 |
++------------+-------------+--------------+--------+
+7895 rows in set (0.36 sec)
